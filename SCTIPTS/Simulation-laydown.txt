@@ -1,0 +1,62 @@
+
+% information
+Step(time, initial time, initial condition, final time, final condition)
+
+% Description: Lower down robot 
+% Status: working
+
+% Sitprogram Per Joint
+
+%Joint 1
+STEP(time, 0.0, 0.0, 1.0, 0.0)+STEP(time, 1.0, 0.0, 10.0, 0.0)
+
+
+%Joint 2
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, -30d)
+
+
+%Joint 3
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, -60d)
+
+------------------
+
+%Joint 4
+STEP(time, 0.0, 0.0, 1.0, 0.0)+STEP(time, 1.0, 0.0, 10.0, 0.0)
+
+
+%Joint 5
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, 30d)
+
+
+%Joint 6
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, 60d)
+
+-----------------------------------
+%Joint 7
+STEP(time, 0.0, 0.0, 1.0, 0.0)+STEP(time, 1.0, 0.0, 10.0, 0.0)
+
+
+%Joint 8
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, -30d)
+
+
+%Joint 9
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, -60d)
+
+---------------------------
+%Joint 10
+STEP(time, 0.0, 0.0, 1.0, 0.0)+STEP(time, 1.0, 0.0, 10.0, 0.0)
+
+
+%Joint 11
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, 30d)
+
+
+%Joint 12
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 0.3, 0.0, 1.5, 60d)
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+
+% information
+Step(time, initial time, initial condition, final time, final condition)
+
+% Description: Lower down robot 
+% Status: working
+
+% Sitprogram Per Joint
+## ABSOLUTE  START, MIDDLE, Leg Extention, Leg Retraction, IN AIR
+
+%Joint 1 -----AAAA (-)
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2, 0d)
+
+		HOLD			LEG EXTENTION			MIDDLE				LEG RETRACTION					IN AIR 
+%Joint 2
+STEP(time, 0.0, 0.0, 0.3, 0.0) / STEP(time, 2.0, 0.0, 2.5, 10d)  / STEP(time, 1.0, 0.0, 2.0, -5d)/ STEP(time, 2.0, 0.0, 2.5, -25d) /  STEP(time, 2.0, 0.0, 2.5, -30d)
+
+
+%Joint 3
+STEP(time, 0.0, 0.0, 0.3, 0.0) / STEP(time, 2.0, 0.0, 2.5, -20d) / STEP(time, 1.0, 0.0, 2, -25d) / STEP(time, 2.0, 0.0, 2.5, -20d) /  STEP(time, 2.0, 0.0, 2.5, -35d)
+
+
+
+
+
+		HOLD			LEG RETRACTION			IN AIR 				LEG EXTENTION				MIDDLE				LEG RETRACTION
+%Joint 2
+STEP(time, 0.0, 0.0, 0.3, 0.0) / STEP(time, 2.0, 0.0, 2.5, -25d) / STEP(time, 2.0, 0.0, 2.5, -30d)  / STEP(time, 1.0, 0.0, 2.0, 10d)/ STEP(time, 2.0, 0.0, 2.5, -5d) /  STEP(time, 2.0, 0.0, 2.5, -25d)
+
+
+%Joint 3
+STEP(time, 0.0, 0.0, 0.3, 0.0) / STEP(time, 2.0, 0.0, 2.5, -20d) / STEP(time, 2.0, 0.0, 2.5, -35d) / STEP(time, 1.0, 0.0, 2, -20d) / STEP(time, 2.0, 0.0, 2.5, -25d) /  STEP(time, 2.0, 0.0, 2.5, -20d)
+
+
+
+
+
+
+
+
+
+-----------------------
+
+STEP MOVEMENTS ARE DISPLACMENTS (RELATIVE) from starting location... absolute positioning needs to be converted to reletive position
+
+-------------------------------
+
+		HOLD			LEG RETRACTION				IN AIR 				LEG EXTENTION			MIDDLE				LEG RETRACTION
+%Joint 1 -----AAAA (-)
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 0d)+STEP(time,2.0, 0.0, 5.0, 0d)
+
+%Joint 2
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -25d)          +STEP(time, 2.0, 0.0, 2.5, -5d)+STEP(time, 2.5, 0.0, 3.0, 40d)+STEP(time, 3.0, 0.0, 3.5, -15d)+STEP(time, 3.5, 0.0, 4.0, -20d)
+
+%Joint 3 
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -20d)          +STEP(time, 2.0, 0.0, 2.5, -15d)+STEP(time, 2.5, 0.0, 3.0, 15d)+STEP(time, 3.0, 0.0, 3.5, -5d)+STEP(time, 3.5, 0.0, 4.0,  5d)
+
+
+
+------------------
+		HOLD			LEG EXTENTION				MIDDLE 				LEG RETRACTION			AIR				LEG EXTENTION
+
+%Joint 4 ---- BBBBB (+)
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 0d)+STEP(time,2.0, 0.0, 5.0, 0d)
+
+%Joint 5
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -10d)         +STEP(time, 2.0, 0.0, 2.5, 15d)+STEP(time, 2.5, 0.0, 3.0, 20d)+STEP(time, 3.0, 0.0, 3.5, 5d)+STEP(time, 3.5, 0.0, 4.0, -40d)
+
+%Joint 6
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 20d)          +STEP(time, 2.0, 0.0, 2.5, 5d)+STEP(time, 2.5, 0.0, 3.0,  -5d)+STEP(time, 3.0, 0.0, 3.5, 15d)+STEP(time, 3.5, 0.0, 4.0, -15d)
+
+
+
+-----------------------------------
+		HOLD			LEG EXTENTION				MIDDLE 				LEG RETRACTION			AIR				LEG EXTENTION
+%Joint 7 ------BBBBBB (-)
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 0d)+STEP(time,2.0, 0.0, 5.0, 0d)
+
+
+%Joint 8
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 10d)          +STEP(time, 2.0, 0.0, 2.5, -15d)+STEP(time, 2.5, 0.0, 3.0, -20d)+STEP(time, 3.0, 0.0, 3.5, -5d)+STEP(time, 3.5, 0.0, 4.0, 40d)
+
+
+%Joint 9
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -20d)         +STEP(time, 2.0, 0.0, 2.5, -5d)+STEP(time, 2.5, 0.0, 3.0,  5d)+STEP(time, 3.0, 0.0, 3.5, -15d)+STEP(time, 3.5, 0.0, 4.0, 15d)
+
+
+
+
+---------------------------
+		HOLD			LEG RETRACTION				IN AIR 				LEG EXTENTION			MIDDLE				LEG RETRACTION
+%Joint 10 ----- AAAA (+)
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 0d)+STEP(time,2.0, 0.0, 5.0, 0d)
+
+
+%Joint 11
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 25d)          +STEP(time, 2.0, 0.0, 2.5, 5d)+STEP(time, 2.5, 0.0, 3.0, -40d)+STEP(time, 3.0, 0.0, 3.5, 15d)+STEP(time, 3.5, 0.0, 4.0, 20d)
+
+
+%Joint 12
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 20d)          +STEP(time, 2.0, 0.0, 2.5, 15d)+STEP(time, 2.5, 0.0, 3.0, -15d)+STEP(time, 3.0, 0.0, 3.5, 5d)+STEP(time, 3.5, 0.0, 4.0,  -5d)
+
+
+
+
+
+-----------------------
+
+FINAL 
+
+-------------------------------
+
+		HOLD			LEG RETRACTION				IN AIR 				LEG EXTENTION			MIDDLE				LEG RETRACTION
+%Joint 1 -----AAAA (-)
+STEP(time, 0.0, 0.0, 25, 0.0)
+
+%Joint 2
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -25d)          +STEP(time, 2.0, 0.0, 2.5, -5d)+STEP(time, 2.5, 0.0, 3.0, 40d)+STEP(time, 3.0, 0.0, 3.5, -15d)+STEP(time, 3.5, 0.0, 4.0, -20d)          +STEP(time, 4.0, 0.0, 4.5, -5d)+STEP(time, 4.5, 0.0, 5.0, 40d)+STEP(time, 5.0, 0.0, 5.5, -15d)+STEP(time, 5.5, 0.0, 6.0, -20d)          +STEP(time, 6.0, 0.0, 6.5, -5d)+STEP(time, 6.5, 0.0, 7.0, 40d)+STEP(time, 7.0, 0.0, 7.5, -15d)+STEP(time, 7.5, 0.0, 8.0, -20d)          +STEP(time, 8.0, 0.0, 8.5, -5d)+STEP(time, 8.5, 0.0, 9.0, 40d)+STEP(time, 9.0, 0.0, 9.5, -15d)+STEP(time, 9.5, 0.0, 10.0, -20d)          +STEP(time, 10.0, 0.0, 10.5, -5d)+STEP(time, 10.5, 0.0, 11.0, 40d)+STEP(time, 11.0, 0.0, 11.5, -15d)+STEP(time, 11.5, 0.0, 12.0, -20d)
+
+%Joint 3 
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -20d)          +STEP(time, 2.0, 0.0, 2.5, -15d)+STEP(time, 2.5, 0.0, 3.0, 15d)+STEP(time, 3.0, 0.0, 3.5, -5d)+STEP(time, 3.5, 0.0, 4.0,  5d)           +STEP(time, 4.0, 0.0, 4.5, -15d)+STEP(time, 4.5, 0.0, 5.0, 15d)+STEP(time, 5.0, 0.0, 5.5, -5d)+STEP(time, 5.5, 0.0, 6.0,  5d)           +STEP(time, 6.0, 0.0, 6.5, -15d)+STEP(time, 6.5, 0.0, 7.0, 15d)+STEP(time, 7.0, 0.0, 7.5, -5d)+STEP(time, 7.5, 0.0, 8.0,  5d)           +STEP(time, 8.0, 0.0, 8.5, -15d)+STEP(time, 8.5, 0.0, 9.0, 15d)+STEP(time, 9.0, 0.0, 9.5, -5d)+STEP(time, 9.5, 0.0, 10.0,  5d)           +STEP(time, 10.0, 0.0, 10.5, -15d)+STEP(time, 10.5, 0.0, 11.0, 15d)+STEP(time, 11.0, 0.0, 11.5, -5d)+STEP(time, 11.5, 0.0, 12.0,  5d)           
+
+
+
+------------------
+		HOLD			LEG EXTENTION				MIDDLE 				LEG RETRACTION			AIR				LEG EXTENTION
+
+%Joint 4 ---- BBBBB (+)
+STEP(time, 0.0, 0.0, 25, 0.0)
+
+%Joint 5
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -10d)         +STEP(time, 2.0, 0.0, 2.5, 15d)+STEP(time, 2.5, 0.0, 3.0, 20d)+STEP(time, 3.0, 0.0, 3.5, 5d)+STEP(time, 3.5, 0.0, 4.0, -40d)          +STEP(time, 4.0, 0.0, 4.5, 15d)+STEP(time, 4.5, 0.0, 5.0, 20d)+STEP(time, 5.0, 0.0, 5.5, 5d)+STEP(time, 5.5, 0.0, 6.0, -40d)        +STEP(time, 6.0, 0.0, 6.5, 15d)+STEP(time, 6.5, 0.0, 7.0, 20d)+STEP(time, 7.0, 0.0, 7.5, 5d)+STEP(time, 7.5, 0.0, 8.0, -40d)          +STEP(time, 8.0, 0.0, 8.5, 15d)+STEP(time, 8.5, 0.0, 9.0, 20d)+STEP(time, 9.0, 0.0, 9.5, 5d)+STEP(time, 9.5, 0.0, 10.0, -40d)          +STEP(time, 10.0, 0.0, 10.5, 15d)+STEP(time, 10.5, 0.0, 11.0, 20d)+STEP(time, 11.0, 0.0, 11.5, 5d)+STEP(time, 11.5, 0.0, 12.0, -40d)
+
+%Joint 6
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 20d)          +STEP(time, 2.0, 0.0, 2.5, 5d)+STEP(time, 2.5, 0.0, 3.0,  -5d)+STEP(time, 3.0, 0.0, 3.5, 15d)+STEP(time, 3.5, 0.0, 4.0, -15d)           +STEP(time, 4.0, 0.0, 4.5, 5d)+STEP(time, 4.5, 0.0, 5.0, -5d)+STEP(time, 5.0, 0.0, 5.5, 15d)+STEP(time, 5.5, 0.0, 6.0,  -15d)           +STEP(time, 6.0, 0.0, 6.5, 5d)+STEP(time, 6.5, 0.0, 7.0, -5d)+STEP(time, 7.0, 0.0, 7.5, 15d)+STEP(time, 7.5, 0.0, 8.0,  -15d)           +STEP(time, 8.0, 0.0, 8.5, 5d)+STEP(time, 8.5, 0.0, 9.0, -5d)+STEP(time, 9.0, 0.0, 9.5, 15d)+STEP(time, 9.5, 0.0, 10.0,  -15d)           +STEP(time, 10.0, 0.0, 10.5, 5d)+STEP(time, 10.5, 0.0, 11.0, -5d)+STEP(time, 11.0, 0.0, 11.5, 15d)+STEP(time, 11.5, 0.0, 12.0,  -15d)           
+
+
+
+-----------------------------------
+		HOLD			LEG EXTENTION				MIDDLE 				LEG RETRACTION			AIR				LEG EXTENTION
+%Joint 7 ------BBBBBB (-)
+STEP(time, 0.0, 0.0, 25, 0.0)
+
+
+%Joint 8
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 10d)          +STEP(time, 2.0, 0.0, 2.5, -15d)+STEP(time, 2.5, 0.0, 3.0, -20d)+STEP(time, 3.0, 0.0, 3.5, -5d)+STEP(time, 3.5, 0.0, 4.0, 40d)          +STEP(time, 4.0, 0.0, 4.5, -15d)+STEP(time, 4.5, 0.0, 5.0, -20d)+STEP(time, 5.0, 0.0, 5.5, -5d)+STEP(time, 5.5, 0.0, 6.0, 40d)      +STEP(time, 6.0, 0.0, 6.5, -15d)+STEP(time, 6.5, 0.0, 7.0, -20d)+STEP(time, 7.0, 0.0, 7.5, -5d)+STEP(time, 7.5, 0.0, 8.0, 40d)          +STEP(time, 8.0, 0.0, 8.5, -15d)+STEP(time, 8.5, 0.0, 9.0, -20d)+STEP(time, 9.0, 0.0, 9.5, -5d)+STEP(time, 9.5, 0.0, 10.0, 40d)          +STEP(time, 10.0, 0.0, 10.5, -15d)+STEP(time, 10.5, 0.0, 11.0, -20d)+STEP(time, 11.0, 0.0, 11.5, -5d)+STEP(time, 11.5, 0.0, 12.0, 40d)
+
+
+%Joint 9
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, -20d)         +STEP(time, 2.0, 0.0, 2.5, -5d)+STEP(time, 2.5, 0.0, 3.0,  5d)+STEP(time, 3.0, 0.0, 3.5, -15d)+STEP(time, 3.5, 0.0, 4.0, 15d)           +STEP(time, 4.0, 0.0, 4.5, -5d)+STEP(time, 4.5, 0.0, 5.0, 5d)+STEP(time, 5.0, 0.0, 5.5, -15d)+STEP(time, 5.5, 0.0, 6.0,  15d)        +STEP(time, 6.0, 0.0, 6.5, -5d)+STEP(time, 6.5, 0.0, 7.0, 5d)+STEP(time, 7.0, 0.0, 7.5, -15d)+STEP(time, 7.5, 0.0, 8.0,  15d)           +STEP(time, 8.0, 0.0, 8.5, -5d)+STEP(time, 8.5, 0.0, 9.0, 5d)+STEP(time, 9.0, 0.0, 9.5, -15d)+STEP(time, 9.5, 0.0, 10.0,  15d)           +STEP(time, 10.0, 0.0, 10.5, -5d)+STEP(time, 10.5, 0.0, 11.0, 5d)+STEP(time, 11.0, 0.0, 11.5, -15d)+STEP(time, 11.5, 0.0, 12.0,  15d)           
+
+
+
+
+---------------------------
+		HOLD			LEG RETRACTION				IN AIR 				LEG EXTENTION			MIDDLE				LEG RETRACTION
+%Joint 10 ----- AAAA (+)
+STEP(time, 0.0, 0.0, 25, 0.0)
+
+
+%Joint 11
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 25d)          +STEP(time, 2.0, 0.0, 2.5, 5d)+STEP(time, 2.5, 0.0, 3.0, -40d)+STEP(time, 3.0, 0.0, 3.5, 15d)+STEP(time, 3.5, 0.0, 4.0, 20d)          +STEP(time, 4.0, 0.0, 4.5, 5d)+STEP(time, 4.5, 0.0, 5.0, -40d)+STEP(time, 5.0, 0.0, 5.5, 15d)+STEP(time, 5.5, 0.0, 6.0, 20d)        +STEP(time, 6.0, 0.0, 6.5, 5d)+STEP(time, 6.5, 0.0, 7.0, -40d)+STEP(time, 7.0, 0.0, 7.5, 15d)+STEP(time, 7.5, 0.0, 8.0, 20d)          +STEP(time, 8.0, 0.0, 8.5, 5d)+STEP(time, 8.5, 0.0, 9.0, -40d)+STEP(time, 9.0, 0.0, 9.5, 15d)+STEP(time, 9.5, 0.0, 10.0, 20d)          +STEP(time, 10.0, 0.0, 10.5, 5d)+STEP(time, 10.5, 0.0, 11.0, -40d)+STEP(time, 11.0, 0.0, 11.5, 15d)+STEP(time, 11.5, 0.0, 12.0, 20d)
+
+
+%Joint 12
+STEP(time, 0.0, 0.0, 0.3, 0.0)+STEP(time, 1.0, 0.0, 2.0, 20d)          +STEP(time, 2.0, 0.0, 2.5, 15d)+STEP(time, 2.5, 0.0, 3.0, -15d)+STEP(time, 3.0, 0.0, 3.5, 5d)+STEP(time, 3.5, 0.0, 4.0,  -5d)           +STEP(time, 4.0, 0.0, 4.5, 15d)+STEP(time, 4.5, 0.0, 5.0, -15d)+STEP(time, 5.0, 0.0, 5.5, 5d)+STEP(time, 5.5, 0.0, 6.0,  -5d)         +STEP(time, 6.0, 0.0, 6.5, 15d)+STEP(time, 6.5, 0.0, 7.0, -15d)+STEP(time, 7.0, 0.0, 7.5, 5d)+STEP(time, 7.5, 0.0, 8.0,  -5d)         +STEP(time, 8.0, 0.0, 8.5, 15d)+STEP(time, 8.5, 0.0, 9.0, -15d)+STEP(time, 9.0, 0.0, 9.5, 5d)+STEP(time, 9.5, 0.0, 10.0,  -5d)           +STEP(time, 10.0, 0.0, 10.5, 15d)+STEP(time, 10.5, 0.0, 11.0, -15d)+STEP(time, 11.0, 0.0, 11.5, 5d)+STEP(time, 11.5, 0.0, 12.0,  -5d)           
+
+
+
+
